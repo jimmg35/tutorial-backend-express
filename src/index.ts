@@ -1,4 +1,6 @@
+import "reflect-metadata"
 import express from 'express'
+import myDataSource from "./dataSource"
 
 // const, let, var
 const app = express()
