@@ -1,0 +1,28 @@
+# docker-compose.yml
+version: '3'
+
+volumes:
+  tutorial-postgres:
+
+services:
+
+  postgres:
+    image: postgis/postgis:14-3.3
+    container_name: dssx-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: jim60308
+      PGDATA: /data/postgres
+    volumes:
+      - tutorial-postgres:/data/postgres
+    ports:
+      - "8888:5432"
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: dssx-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: postgres@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: jim60308
+    ports:
+      - "8080:80"
