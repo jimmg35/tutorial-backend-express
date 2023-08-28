@@ -1,8 +1,8 @@
 # docker-compose.yml
 version: '3'
 
-volumes:
-  tutorial-postgres:
+# volumes:
+#   tutorial-postgres:
 
 services:
 
@@ -14,7 +14,7 @@ services:
       POSTGRES_PASSWORD: jim60308
       PGDATA: /data/postgres
     volumes:
-      - tutorial-postgres:/data/postgres
+      - ./mydata:/data/postgres
     ports:
       - "8888:5432"
 
